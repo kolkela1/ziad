@@ -773,3 +773,6 @@ body {
     width: 80%;
   }
 }
+.food-grid div{
+  background-color: rgba(71, 70, 70, 0.452);
+}
