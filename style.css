@@ -1,0 +1,775 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: black;
+  overflow-x: hidden;
+}
+
+.navbar {
+  background-color: #222;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5000;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.left-section h1 {
+  font-size: 24px;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.center-section a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 20px;
+  transition: 0.3s;
+  font-weight: 600;
+
+}
+
+.center-section a:hover {
+  color: #d4a762;
+}
+.text{
+  color: #d4a762;
+}
+
+.right-section {
+  display: flex;
+  gap: 30px;
+  margin-right: 50px;
+}
+
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .center-section,
+  .right-section {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    line-height: 20px;
+    
+  }
+
+  .center-section.show,
+  .right-section.show {
+    display: flex;
+  }
+
+  .center-section a {
+    margin: 10px 0;
+  }
+
+  .right-section {
+    align-items: flex-start;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+}
+}
+
+.font{
+  font-size: 30px;
+}
+.hover{
+  color: red;
+}
+.hover:hover{
+  background-color: #222;
+  color: white;
+}
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #d4a762; 
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #d4a762;
+}
+
+.logo:hover span {
+  color: #ffffff;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background-color: #d4a762;
+  transition: width 0.4s ease;
+}
+
+.logo:hover::after {
+  width: 100%;
+}
+.main_section,.about_section{
+  height: 100vh;
+  width: 100vw;
+  margin-top: 70px;
+  position: relative;
+}
+.main_section .body_img img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+}
+#about_coffee{
+  color: #d4a762;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  font-size: 20px;
+  line-height: 55px;
+  font-weight: bold;
+  text-align: center;
+}
+@media screen and (min-width : 0px ) and (max-width : 700px ) {
+  #about_coffee{
+    line-height: 35px;
+    font-size: 17px;
+    text-align: center;
+  }
+  
+}
+@media screen and (min-width : 0px ) and (max-width : 700px ) {
+  .description h3,.description p{
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+  }
+  
+}
+
+/* ------------------- المنتجات المشروبات الساخنة ------------------- */
+.hot-drinks-grid,
+.cold-drinks-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hot-drinks-grid .product,
+.cold-drinks-grid .product {
+  background-color: #111;
+  color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  flex: 1 1 calc(33.333% - 40px); /* 3 منتجات بجنب بعض */
+  max-width: 300px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hot-drinks-grid .product:hover,
+.cold-drinks-grid .product:hover {
+  background-color: #222;
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.product-info h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.product-info p {
+  font-size: 14px;
+  color: #bbb;
+  text-align: center;
+}
+
+.price {
+  margin-top: 8px;
+  background-color: #ff5959;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+/* ------------------- المأكولات ------------------- */
+.food-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #000;
+}
+
+.food-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #ffb347;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.food-item {
+  background-color: #111;
+  padding: 12px 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.food-item:hover {
+  background-color: #222;
+  transform: translateY(-3px);
+}
+
+.food-item span {
+  font-size: 16px;
+  color: #fff;
+}
+
+.food-item small {
+  color: #bbb;
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.food-item span:last-child {
+  color: #ff5959;
+  font-weight: bold;
+}
+
+/* ------------------- Responsive ------------------- */
+@media (max-width: 900px) {
+  .hot-drinks-grid .product,
+  .cold-drinks-grid .product {
+    flex: 1 1 calc(50% - 20px); /* 2 منتجات بجنب بعض */
+  }
+}
+
+@media (max-width: 600px) {
+  .hot-drinks-grid .product,
+  .cold-drinks-grid .product {
+    flex: 1 1 100%; /* عنصر واحد لكل صف */
+  }
+
+  .food-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .food-item small {
+    display: block;
+    margin: 0 0 5px 0;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", sans-serif;
+  background-color: #000; /* خلفية سوداء للصفحة كلها */
+  color: #fff; /* نص أبيض افتراضي */
+}
+
+/* روابط أو نصوص تانية داخل السيكشنات */
+a, p, span, h1, h2, h3, h4 {
+  color: #fff;
+}
+
+/* لو فيه hover على المنتجات أو المأكولات */
+.product:hover,
+.food-item:hover {
+  background-color: #222; /* ظل غامق عند المرور */
+}
+
+/* ------------------- مشروبات ------------------- */
+.hot-drinks-grid .product,
+.cold-drinks-grid .product {
+  padding: 8px; /* أقل Padding داخل الكارت */
+  max-width: 220px; /* أصغر عرض */
+  border-radius: 10px; /* حجم الكروت */
+}
+
+.product img {
+  width: 90px;  /* أصغر الصورة */
+  height: 90px;
+  margin-bottom: 6px;
+}
+
+.product-info h3 {
+  font-size: 15px; /* أصغر العنوان */
+  margin-bottom: 3px;
+}
+
+.product-info p {
+  font-size: 12px; /* أصغر النص */
+}
+
+.price {
+  padding: 3px 6px; /* أصغر الدائرة */
+  font-size: 13px;
+}
+
+/* ------------------- مأكولات ------------------- */
+.food-item {
+  padding: 8px 12px; /* أقل Padding */
+  border-radius: 8px;
+}
+
+.food-item span {
+  font-size: 13px; /* أصغر النص */
+}
+
+.food-item small {
+  font-size: 11px;
+}
+
+.food-item span:last-child {
+  font-size: 13px; /* أصغر السعر */
+  padding: 2px 6px;
+  border-radius: 50px;
+}
+
+#total_products{
+  margin-top: 90px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+}
+
+body {
+  background-color: #0e0e0e;
+  color: #fff;
+  line-height: 1.7;
+}
+
+.about-section {
+  padding: 80px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ffb400;
+}
+
+.about-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.features {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.features div {
+  background: #1e1e1e;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.features div:hover {
+  background: #ffb400;
+  color: #000;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 180, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text h2 {
+    font-size: 28px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+  }
+}
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Cairo", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== سيكشن من نحن ===== */
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 80px 10%;
+  gap: 50px;
+  background: linear-gradient(180deg, #000 0%, #111 100%);
+}
+
+.about-text {
+  flex: 1 1 450px;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ddd;
+  margin-bottom: 25px;
+}
+
+.learn-more {
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.learn-more:hover {
+  background-color: #ffd633;
+  transform: translateY(-2px);
+}
+
+.about-photo {
+  flex: 1 1 350px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+  transition: 0.4s ease;
+}
+
+.about-photo img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== سيكشن المميزات ===== */
+.features-section {
+  text-align: center;
+  padding: 70px 10%;
+  background-color: #111;
+  border-top: 1px solid #222;
+}
+
+.features-section h2 {
+  font-size: 34px;
+  color: #ffcc00;
+  margin-bottom: 40px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.feature {
+  background-color: #1a1a1a;
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+
+.feature:hover {
+  background-color: #222;
+  transform: translateY(-5px);
+}
+
+.feature i {
+  font-size: 40px;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.feature h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.feature p {
+  font-size: 15px;
+  color: #ccc;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-photo img {
+    max-width: 320px;
+  }
+
+  .learn-more {
+    font-size: 15px;
+  }
+}
+.about-content{
+  margin-top: 100px;
+  margin-left: 50px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* HERO SECTION */
+.hero {
+  background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200") center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.hero h1 span {
+  color: #00bcd4;
+}
+
+.hero p {
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #00bcd4;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #0097a7;
+}
+
+/* ABOUT SECTION */
+.about {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #111;
+}
+
+.about h2 {
+  color: #00bcd4;
+  margin-bottom: 15px;
+}
+
+/* FEATURES SECTION */
+.features {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #000;
+}
+
+.features h2 {
+  color: #00bcd4;
+  margin-bottom: 40px;
+}
+
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.feature {
+  background-color: #111;
+  border-radius: 15px;
+  padding: 25px;
+  width: 250px;
+  transition: 0.3s;
+}
+
+.feature:hover {
+  background-color: #1a1a1a;
+  transform: translateY(-5px);
+}
+
+.feature img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.feature h3 {
+  color: #00bcd4;
+  margin-bottom: 10px;
+}
+
+/* CTA SECTION */
+.cta {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #111;
+}
+
+.cta h2 {
+  margin-bottom: 20px;
+  color: #00bcd4;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .features-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature {
+    width: 80%;
+  }
+}
